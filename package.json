@@ -1,0 +1,42 @@
+{
+  "name": "git-commit-interactive-cli",
+  "version": "1.0.0",
+  "description": "git commit interactive cli",
+  "type": "module",
+  "bin": {
+    "gcommit": "lib/cli.js"
+  },
+  "keywords": [
+    "git",
+    "commit",
+    "emoji",
+    "leo",
+    "lgabrielgr"
+  ],
+  "author": {
+    "name": "Leo Gutierrez",
+    "email": "lgabrielgr@gmail.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "execa": "^6.1.0",
+    "fs": "^0.0.1-security",
+    "inquirer": "^9.1.4",
+    "inquirer-autocomplete-prompt": "^3.0.0",
+    "node-emoji": "^1.11.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.20.5",
+    "@babel/preset-flow": "^7.18.6",
+    "flow-bin": "^0.195.0",
+    "watch": "^0.13.0"
+  },
+  "scripts": {
+    "build": "babel src/ -d lib/",
+    "prepublish": "npm run build",
+    "flow": "flow",
+    "watch": "watch 'npm run build' ./src"
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "types": [
+    {
+      "emoji": "✨",
+      "emojiCode": ":sparkles:",
+      "description": "New Feature",
+      "messagePrefix": "feat:"
+    },
+    {
+      "emoji": "🎉",
+      "emojiCode": ":tada:",
+      "description": "Initial Commit",
+      "messagePrefix": "feat:"
+    },
+    {
+      "emoji": "🚑️",
+      "emojiCode": ":ambulance:",
+      "description": "Hotfix",
+      "messagePrefix": "fix:"
+    },
+    {
+      "emoji": "🐛",
+      "emojiCode": ":bug:",
+      "description": "Bug Fix",
+      "messagePrefix": "fix:"
+    },
+    {
+      "emoji": "🧻",
+      "emojiCode": ":roll_of_paper:",
+      "description": "Fix Typo",
+      "messagePrefix": "fix:"
+    }
+  ]
+}
