@@ -4,17 +4,17 @@ import { execaSync } from 'execa'
 
 import type { CommitType } from '../models/commitTypes.js'
 
-const gitCommit = (commitType: CommitType, commitTitle: string, commitMessage: string): void => {
+const gitCommit = async (commitType: CommitType, commitTitle: string, commitMessage: string): Promise<void> => {
     let gitCommitMessage = buildGitCommitMessage(commitType, commitTitle, commitMessage);
     try {
         let { stdout } = execaSync('git', ['commit', '-m', gitCommitMessage])
-        console.log(stdout)
+        console.log('\n'+stdout)
     } catch (error) {
-        console.error(chalk.bgRed.yellow(error))
+        return Promise.reject(error.message)
     }
 }
 
-const buildGitCommitMessage = (commitType: CommitType, commitTitle: string, commitMessage: string): any => {
+const buildGitCommitMessage = (commitType: CommitType, commitTitle: string, commitMessage: string): string => {
     return `${commitType.messagePrefix} ${commitType.emojiCode} ${commitTitle} - ${commitMessage}`
 }
 

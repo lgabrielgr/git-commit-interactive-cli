@@ -19,12 +19,18 @@ const buildInquireQuestions = (commitTypes: Array<CommitType>): Array<Object> =>
             )
         },
         {
-            name: "ticketNumber",
+            name: 'ticketNumber',
             message: "Enter ticket # for reference, or commit title:"
         },
         {
-            name: "message",
+            name: 'message',
             message: "Enter commit message:"
+        },
+        {
+            name: 'pushToOrigin',
+            type: 'confirm',
+            default: false,
+            message: 'Push to origin?:'
         }
     ];
 }
