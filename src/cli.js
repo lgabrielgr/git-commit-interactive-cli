@@ -18,5 +18,5 @@ gitStatus()
         inquirer.prompt(inquireQuestions)
             .then((answers) =>
                 gitCommit(answers.commitType, answers.ticketNumber, answers.message)
-                    .then(() => gitPush())))
+                    .then(() => gitPush(answers.pushToOrigin))))
     .catch(reason => console.error(chalk.bgRed.yellow(reason)))

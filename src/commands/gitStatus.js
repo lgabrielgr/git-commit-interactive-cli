@@ -27,9 +27,4 @@ const gitStatus = async (): Promise<boolean> => {
     }
 }
 
-// const prepareFilesToCommit = async(): Promise<void> => {
-//     gitStatus()
-//         .then(gitAddAll)
-// }
-
 export default gitStatus
