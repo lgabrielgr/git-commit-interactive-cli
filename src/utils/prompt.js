@@ -5,7 +5,7 @@ import type {CommitType} from "../models/commitTypes.js";
 
 inquirer.registerPrompt('autocomplete', inquirerAutocompletePrompt)
 
-const buildInquireQuestions = (commitTypes: Array<CommitType>): Array<Object> => {
+const buildCommitInquireQuestions = (commitTypes: Array<CommitType>): Array<Object> => {
     return [
         {
             type: 'autocomplete',
@@ -35,4 +35,15 @@ const buildInquireQuestions = (commitTypes: Array<CommitType>): Array<Object> =>
     ];
 }
 
-export default buildInquireQuestions
+const buildAddFilesInquireQuestions = (): Array<Object> => {
+    return [
+        {
+            name: 'addFiles',
+            type: 'confirm',
+            default: false,
+            message: 'Include file(s) listed above in what will be committed?:'
+        }
+    ]
+}
+
+export { buildCommitInquireQuestions, buildAddFilesInquireQuestions }
