@@ -1,18 +1,19 @@
 // @flow
 import inquirer from 'inquirer'
 import inquirerAutocompletePrompt from 'inquirer-autocomplete-prompt'
-import type {CommitType} from "../models/commitTypes.js";
+
+import readCommitTypes from './resolveCommitTypes.js'
 
 inquirer.registerPrompt('autocomplete', inquirerAutocompletePrompt)
 
-const buildCommitInquireQuestions = (commitTypes: Array<CommitType>): Array<Object> => {
+const buildCommitInquireQuestions = (): Array<Object> => {
     return [
         {
             type: 'autocomplete',
             name: 'commitType',
             message: 'Choose the purpose of your changes:',
             source: (answersSoFar, input) => Promise.resolve(
-                commitTypes.map((commitType) => ({
+                readCommitTypes().types.map((commitType) => ({
                     name: `${commitType.emoji} - ${commitType.description}`,
                     value: commitType
                 }))

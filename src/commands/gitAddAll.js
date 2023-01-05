@@ -6,9 +6,9 @@ import { execaSync } from 'execa'
 
 import { buildAddFilesInquireQuestions } from '../utils/prompt.js'
 
-const gitAddAll = async (filesToReview: boolean): Promise<void> => {
+const gitAddAll = async (notStagedOrUntrackedFilesToReview: boolean): Promise<void> => {
     try {
-        if (filesToReview) {
+        if (notStagedOrUntrackedFilesToReview) {
             console.log('\n')
             await inquirer.prompt(buildAddFilesInquireQuestions())
                 .then(answer => {
