@@ -2,13 +2,16 @@
 import { readFileSync } from 'fs'
 
 import type { Commits } from '../models/commitTypes.js'
+import chalk from "chalk";
 
-const readCommitTypes = async (): Promise<Commits> => {
+const readCommitTypes = (): Commits => {
+    const COMMIT_TYPES_JSON_FILE = './resources/commit_types.json';
     try {
-        let jsonFileContent = readFileSync('./resources/commit_types.json', {}).toString()
+        let jsonFileContent = readFileSync(COMMIT_TYPES_JSON_FILE, {}).toString()
         return JSON.parse(jsonFileContent)
     } catch (error) {
-        return Promise.reject(error.message)
+        console.error(chalk.bgRed.yellow(`An error occurred while reading file '${COMMIT_TYPES_JSON_FILE}', please verify the file.`))
+        throw error
     }
 }
 

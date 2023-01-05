@@ -13,9 +13,15 @@
       "messagePrefix": "feat:"
     },
     {
+      "emoji": "🔨",
+      "emojiCode": ":hammer:",
+      "description": "Refactoring",
+      "messagePrefix": "feat:"
+    },
+    {
       "emoji": "🚑️",
       "emojiCode": ":ambulance:",
-      "description": "Hotfix",
+      "description": "Hot Fix",
       "messagePrefix": "fix:"
     },
     {
