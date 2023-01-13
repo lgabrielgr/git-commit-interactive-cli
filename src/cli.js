@@ -9,4 +9,4 @@ import gitAddAll from './commands/gitAddAll.js'
 gitStatus()
     .then(gitAddAll)
     .then(gitCommit)
-    .catch(reason => console.error(chalk.bgRed.yellow(reason)))
+    .catch(reason => console.error('\n' + chalk.bgRed.yellow(reason)))
